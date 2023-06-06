@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myporto/pages/home/components/education_section.dart';
+import 'package:myporto/pages/home/components/experience_section.dart';
 import 'package:myporto/utils/constants.dart';
 import 'package:myporto/utils/globals.dart';
 
@@ -68,6 +70,10 @@ class Home extends StatelessWidget {
             children: [
               const Header(),
               Carousel(),
+              const SizedBox(height: 20),
+              const EducationSection(),
+              const SizedBox(height: 20),
+              const ExperienceSection()
             ],
           ),
         ),
