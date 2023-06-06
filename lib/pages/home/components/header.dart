@@ -182,7 +182,7 @@ Widget buildHeader() {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: const [
         HeaderLogo(),
-        HeaderRow(),
+        // HeaderRow(),
       ],
     ),
   );
