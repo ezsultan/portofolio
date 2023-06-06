@@ -9,13 +9,13 @@ import '../../../utils/screen_helper.dart';
 final List<Education> educationList = [
   Education(
     description:
-        "JABAR Coding Camp is a scholarship program in the form of coding training held by the West Java government. In this bootcamp i learned about mobile developer using Flutter SDK.",
+        "I was chosen as one of only 20 students out of over 13,000 applicants to receive the prestigious Jabar Coding Camp (JCC) scholarship sponsored by the West Java Government. During the program, I focused on learning Flutter, specifically state management and slicing techniques. This incredible opportunity has equipped me with valuable skills and knowledge to excel in Flutter app development.",
     linkName: "Flutter Developer",
     period: "August 2021 - April 2022 | Jabar Coding Camp (JCC)",
   ),
   Education(
     description:
-        "In this school i learned about software engineering, namely learning about basic of programming language using C++, Java, and PHP. In addition, learn about computer basics and computer applications.",
+        "I studied software engineering, focusing on C++, Java, and PHP programming languages. Additionally, I learned computer basics and explored various applications. These experiences have shaped my passion for software engineering and provided a strong foundation for tackling technical challenges.",
     linkName: "Rekayasa Perangkat Lunak",
     period: "June 2017 - June 2020 | SMK YASPIM",
   )
@@ -95,7 +95,7 @@ class EducationSection extends StatelessWidget {
                               ),
                               Text(
                                 education.description!,
-                                maxLines: 4,
+                                maxLines: 10,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
                                   color: kCaptionColor,
