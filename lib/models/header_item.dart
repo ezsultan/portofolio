@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class HeaderItem {
-  final String title;
-  final VoidCallback onTap;
-  final bool isButton;
-
   HeaderItem({
     required this.title,
     required this.onTap,
     required this.isButton,
   });
+
+  final bool isButton;
+  final VoidCallback onTap;
+  final String title;
 }

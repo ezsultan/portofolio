@@ -149,7 +149,7 @@ class Header extends StatelessWidget {
   }
 }
 
-//! Mobile header
+//! Mobile headerlib/pages/home/components/header.dart
 Widget mobileHeader() {
   return SafeArea(
     child: Padding(

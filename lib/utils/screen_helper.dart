@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ScreenHelper extends StatelessWidget {
-  final Widget mobile;
-  final Widget tablet;
-  final Widget desktop;
   const ScreenHelper({
     Key? key,
     required this.mobile,
@@ -11,14 +8,18 @@ class ScreenHelper extends StatelessWidget {
     required this.desktop,
   }) : super(key: key);
 
-  bool isMobile(BuildContext context) =>
+  final Widget desktop;
+  final Widget mobile;
+  final Widget tablet;
+
+  static bool isMobile(BuildContext context) =>
       MediaQuery.of(context).size.width < 800.0;
 
-  bool isTablet(BuildContext context) =>
+  static bool isTablet(BuildContext context) =>
       MediaQuery.of(context).size.width >= 800.0 &&
       MediaQuery.of(context).size.width < 1200.0;
 
-  bool isDesktop(BuildContext context) =>
+  static bool isDesktop(BuildContext context) =>
       MediaQuery.of(context).size.width >= 1200.0;
 
   @override
