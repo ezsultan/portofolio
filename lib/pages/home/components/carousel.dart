@@ -1,22 +1,21 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:myporto/pages/home/components/carousel_items.dart';
-import 'package:myporto/utils/constants.dart';
-import 'package:myporto/utils/screen_helper.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-class Carousel extends StatelessWidget {
-  Carousel({Key? key}) : super(key: key);
+import '../../../utils/constants.dart';
+import '../../../utils/screen_helper.dart';
+import 'carousel_items.dart';
 
+class Carousel extends StatelessWidget {
   final CarouselController carouselController = CarouselController();
 
+  Carousel({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     double carouselContainerHeight = MediaQuery.of(context).size.height *
-        (ScreenHelper.isMobile(context) ? .7 : .8);
-    return Container(
+        (ScreenHelper.isMobile(context) ? .7 : .85);
+    return SizedBox(
       height: carouselContainerHeight,
-      color: kBackgroundColor,
       width: double.infinity,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -24,21 +23,24 @@ class Carousel extends StatelessWidget {
           Container(
             alignment: Alignment.center,
             child: CarouselSlider(
-                carouselController: carouselController,
-                options: CarouselOptions(
-                  viewportFraction: 1,
-                  scrollPhysics: const NeverScrollableScrollPhysics(),
-                  height: carouselContainerHeight,
-                ),
-                items: List.generate(
-                  carouselItems.length,
-                  (index) => Builder(
-                    builder: (BuildContext context) => Container(
+              carouselController: carouselController,
+              options: CarouselOptions(
+                // autoPlay: true,
+                viewportFraction: 1,
+                scrollPhysics: const NeverScrollableScrollPhysics(),
+                height: carouselContainerHeight,
+              ),
+              items: List.generate(
+                carouselItems.length,
+                (index) => Builder(
+                  builder: (BuildContext context) {
+                    return Container(
                       constraints: BoxConstraints(
                         minHeight: carouselContainerHeight,
                       ),
                       child: ScreenHelper(
-                        desktop: _buildDekstop(
+                        // Responsive views
+                        desktop: _buildDesktop(
                           context,
                           carouselItems[index].text,
                           carouselItems[index].image,
@@ -54,54 +56,68 @@ class Carousel extends StatelessWidget {
                           carouselItems[index].image,
                         ),
                       ),
-                    ),
-                  ),
-                ).toList()),
-          ),
+                    );
+                  },
+                ),
+              ).toList(),
+            ),
+          )
         ],
       ),
     );
   }
 }
 
-// Big Screen
-Widget _buildDekstop(BuildContext context, Widget text, Widget image) {
+// Big screens
+Widget _buildDesktop(BuildContext context, Widget text, Widget image) {
   return Center(
     child: ResponsiveWrapper(
-      maxWidth: 1000.0,
-      minWidth: 1000.0,
+      maxWidth: kDesktopMaxWidth,
+      minWidth: kDesktopMaxWidth,
       defaultScale: false,
       child: Row(
         children: [
-          Expanded(child: text),
-          Expanded(child: image),
+          Expanded(
+            child: text,
+          ),
+          Expanded(
+            child: image,
+          )
         ],
       ),
     ),
   );
 }
 
+// Mid screens
 Widget _buildTablet(BuildContext context, Widget text, Widget image) {
   return Center(
     child: ResponsiveWrapper(
-      maxWidth: 760.0,
-      minWidth: 760.0,
+      maxWidth: kTabletMaxWidth,
+      minWidth: kTabletMaxWidth,
       defaultScale: false,
       child: Row(
         children: [
-          Expanded(child: text),
-          Expanded(child: image),
+          Expanded(
+            child: text,
+          ),
+          Expanded(
+            child: image,
+          )
         ],
       ),
     ),
   );
 }
+
+// SMall Screens
 
 Widget _buildMobile(BuildContext context, Widget text, Widget image) {
   return Container(
     constraints: BoxConstraints(
-      maxWidth: MediaQuery.of(context).size.width * 8,
+      maxWidth: getMobileMaxWidth(context),
     ),
     width: double.infinity,
+    child: text,
   );
 }

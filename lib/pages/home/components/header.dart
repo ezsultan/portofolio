@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myporto/models/header_item.dart';
 import 'package:myporto/utils/constants.dart';
-import 'package:myporto/utils/globals.dart';
 import 'package:myporto/utils/screen_helper.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -156,18 +155,8 @@ Widget mobileHeader() {
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const HeaderLogo(),
-          GestureDetector(
-            onTap: () {
-              // Open drawer with globalkey
-              Globals.scaffoldKey.currentState!.openEndDrawer();
-            },
-            child: const Icon(
-              Icons.menu,
-              color: Colors.white,
-            ),
-          )
+        children: const [
+          HeaderLogo(),
         ],
       ),
     ),
