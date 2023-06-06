@@ -39,7 +39,7 @@ List<CarouselItemModel> carouselItems = List.generate(
           ),
           const SizedBox(height: 10),
           Text(
-            "Full-stack mobile developer based in West Java, Indonesia.",
+            "Full-stack mobile developer based in Jakarta, Indonesia.",
             style: GoogleFonts.jetBrainsMono(
               color: kCaptionColor,
               fontSize: 15.0,
