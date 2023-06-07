@@ -190,9 +190,6 @@ class WebsiteAd extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            const SizedBox(
-                              height: 70.0,
-                            )
                           ],
                         ),
                 ),
