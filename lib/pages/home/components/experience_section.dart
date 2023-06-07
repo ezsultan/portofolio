@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myporto/pages/home/components/read_more.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 import '../../../models/education.dart';
@@ -17,13 +18,13 @@ final List<Education> educationList = [
     description:
         "Backend developer experienced in NestJS and AWS S3. Built scalable applications with NestJS and leveraged AWS S3 for object storage. Collaborated cross-functionally to ensure seamless integration. Proficient in agile methodologies. Committed to delivering efficient backend systems with high code quality.",
     linkName: "Back End Developer (Nest JS)",
-    period: "June 2022 - February 2023 | PT. Nitoza Indonesia Mandiri",
+    period: "June 2022 - February 2023 | Nitoza",
   ),
   Education(
     description:
         "As a Flutter development intern, I implemented designs into code and built applications using the BloC pattern. I also actively contributed to bug fixing, ensuring the smooth functionality of the applications.",
     linkName: "Flutter Developer",
-    period: "March 2022 - June 2022 | PT. Nitoza Indonesia Mandiri",
+    period: "March 2022 - June 2022 | Nitoza",
   ),
 ];
 
@@ -99,14 +100,9 @@ class ExperienceSection extends StatelessWidget {
                               const SizedBox(
                                 height: 20.0,
                               ),
-                              Text(
-                                education.description!,
-                                maxLines: 10,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                  color: kCaptionColor,
-                                  height: 1.5,
-                                ),
+                              ReadMoreText(
+                                text: education.description!,
+                                maxLines: 2,
                               ),
                               const SizedBox(
                                 height: 20.0,
