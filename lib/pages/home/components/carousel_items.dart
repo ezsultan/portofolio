@@ -81,14 +81,6 @@ List<CarouselItemModel> carouselItems = List.generate(
               const SizedBox(width: 15),
               SizedBox(
                 height: 35,
-                child: Image.asset(
-                  "assets/images/dribbble.png",
-                  color: Colors.white,
-                ),
-              ),
-              const SizedBox(width: 15),
-              SizedBox(
-                height: 35,
                 child: GestureDetector(
                   onTap: () async {
                     final Uri _url = Uri.parse('https://github.com/ezsultan');
@@ -100,20 +92,11 @@ List<CarouselItemModel> carouselItems = List.generate(
                     }
                   },
                   child: Image.asset(
-                    "assets/images/linkedIn.png",
+                    "assets/images/linkedin.png",
                     color: Colors.white,
                   ),
                 ),
               ),
-              const SizedBox(width: 15),
-              SizedBox(
-                height: 35,
-                child: Image.asset(
-                  "assets/images/discord.png",
-                  color: Colors.white,
-                ),
-              ),
-              const SizedBox(width: 15),
             ],
           )
         ],
