@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myporto/models/carousel_item_model.dart';
 import 'package:myporto/utils/constants.dart';
@@ -72,9 +73,10 @@ List<CarouselItemModel> carouselItems = List.generate(
                       throw 'Could not launch $_url';
                     }
                   },
-                  child: Image.asset(
-                    "assets/images/github.png",
+                  child: const Icon(
+                    MaterialCommunityIcons.github,
                     color: Colors.white,
+                    size: 30,
                   ),
                 ),
               ),
@@ -83,17 +85,18 @@ List<CarouselItemModel> carouselItems = List.generate(
                 height: 35,
                 child: GestureDetector(
                   onTap: () async {
-                    final Uri _url = Uri.parse('https://github.com/ezsultan');
-
+                    final Uri _url =
+                        Uri.parse('https://www.linkedin.com/in/ezsultan/');
                     if (await launchUrl(_url)) {
                       // await launchUrl(_url);
                     } else {
                       throw 'Could not launch $_url';
                     }
                   },
-                  child: Image.asset(
-                    "assets/images/linkedin.png",
+                  child: const Icon(
+                    MaterialCommunityIcons.linkedin,
                     color: Colors.white,
+                    size: 30,
                   ),
                 ),
               ),
