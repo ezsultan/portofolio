@@ -117,7 +117,7 @@ List<CarouselItemModel> carouselItems = List.generate(
               child: TextButton(
                 onPressed: () async {
                   final Uri _url = Uri.parse(
-                      'https://drive.google.com/file/d/1tfBNEcXY6El5smATvb7nO1mwFPMRB2DL/view?usp=sharing');
+                      'https://drive.google.com/file/d/1b2rPXyXxtdzJ2vV-Modxb7O0Apn-U1Dj/view?usp=sharing');
                   if (await launchUrl(_url)) {
                     // await launchUrl(_url);
                   } else {
