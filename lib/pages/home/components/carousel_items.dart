@@ -101,7 +101,42 @@ List<CarouselItemModel> carouselItems = List.generate(
                 ),
               ),
             ],
-          )
+          ),
+          const SizedBox(height: 30),
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: Container(
+              decoration: BoxDecoration(
+                color: kPrimaryColor,
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              height: 48.0,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 28.0,
+              ),
+              child: TextButton(
+                onPressed: () async {
+                  final Uri _url = Uri.parse(
+                      'https://drive.google.com/file/d/1tfBNEcXY6El5smATvb7nO1mwFPMRB2DL/view?usp=sharing');
+                  if (await launchUrl(_url)) {
+                    // await launchUrl(_url);
+                  } else {
+                    throw 'Could not launch $_url';
+                  }
+                },
+                child: const Center(
+                  child: Text(
+                    "DOWNLOAD CV",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 13.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     ),

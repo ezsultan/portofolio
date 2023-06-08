@@ -39,6 +39,7 @@ class WebsiteAd extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            const SizedBox(height: 50),
                             Text(
                               "DASHBOARD SIMREL",
                               style: GoogleFonts.oswald(
@@ -100,9 +101,6 @@ class WebsiteAd extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            const SizedBox(
-                              height: 70.0,
-                            )
                           ],
                         )
                       : Expanded(
