@@ -135,7 +135,7 @@ class Polmark extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "OP",
+                                  "POLMARK INDONESIA",
                                   style: GoogleFonts.oswald(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w900,
