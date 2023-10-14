@@ -84,7 +84,7 @@ class Polmark extends StatelessWidget {
                                         child: TextButton(
                                           onPressed: () async {
                                             final Uri _url = Uri.parse(
-                                                'http://stg-polmark.thinkspedia.id/dashboard');
+                                                '');
                                             if (await launchUrl(_url)) {
                                               // await launchUrl(_url);
                                             } else {
